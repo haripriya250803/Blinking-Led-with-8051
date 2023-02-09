@@ -1,0 +1,42 @@
+#include<reg51.h>
+sbit led1=P3^0;
+sbit led2=P3^1;
+sbit led3=P3^2;
+sbit led4=P3^3;
+
+
+sbit sw1=P0^0;
+sbit sw2=P0^1;
+sbit sw3=P0^2;
+sbit sw4=P0^3;
+
+void main()
+ P3=0x00; //output
+ P0=0xff;  //input
+ 
+ while(1)
+ {
+if(sw1==0)
+ {
+ led1=1;
+ while(sw1==00);
+ }
+ if(sw2==0)
+ {
+ led2=1;
+ while(sw2==00);
+ }
+ if(sw3==0)
+ {
+ led3=1;
+ while(sw3==00);
+ }
+ if(sw4==0)
+ {
+ led4=1;
+ while(sw4==00);
+ }
+ led1=led2=led3=led4=0;
+ }
+ ]
+ 
